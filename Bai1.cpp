@@ -35,6 +35,47 @@ void SapXepTangInterChange(int a[], int n) {
 		}
 	}
 }
+void SapXepGiamInterChange(int a[], int n) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (a[i] < a[j]) {
+				int temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+}
+int BinarySearch(int a[], int n, int x) {
+	int left = 0, right = n - 1;
+	while (left <= right) {
+		int mid = left + (right - left) / 2;
+		if (a[mid] == x) {
+			return mid;
+		}
+		if (a[mid] < x) {
+			left = mid + 1;
+		}
+		else {
+			right = mid - 1;
+		}
+	}
+	return -1;
+}
+void SapXepTangSelection(int a[], int n) {
+	int i, j, min;
+	for (i = 0; i < n - 1; i++) {
+		min = i;
+		for (j = i + 1; j < n; j++) {
+			if (a[j] < a[min]) {
+				min = j;
+			}
+		}
+		int temp = a[min];
+		a[min] = a[i];
+		a[i] = temp;
+	}
+}
 
 void xuatMang(int a[], int n)
 {
@@ -66,6 +107,11 @@ int main() {
 		printf("\nMenu:\n");
 		printf("1. xuat mang random\n");
 		printf("2. xuat mang random toan chan\n");
+		printf("3. Tim gia tri x tren mang\n");
+		printf("4. Sap xep mang tang dan theo interchange sort\n");
+		printf("5. Sap xep mang giam dan theo interchange sort\n");
+		printf("6. Tra ve vi tri cua x trong a dua tren binary search\n");
+		printf("7. Sap xep a tang dan theo selection sort\n");
 		printf("hay nhap lua chon: ");
 		scanf("%d", &chon);
 
@@ -98,6 +144,37 @@ int main() {
 			printf("Mang sau khi sap xep tang dan: ");
 			xuatMang(a, n);
 			break;
+		case 5:
+			SapXepGiamInterChange(a, n);
+			printf("Mang sau khi sap xep giam dan: ");
+			xuatMang(a, n);
+			break;
+		case 6:
+		{
+			SapXepTangInterChange(a, n);
+			xuatMang(a, n);
+			int x;
+			printf("Nhap gia tri x can tim: ");
+			scanf("%d", &x);
+			int result = BinarySearch(a, n, x);
+			if (result != -1) {
+				printf("Tim thay %d tai vi tri %d trong mang.\n", x, result);
+			}
+			else {
+				printf("%d khong ton tai trong mang.\n", x);
+			}
+			xuatMang(a, n);
+			break;
+		}
+		case 7:
+		{
+				  SapXepTangSelection(a, n);
+				  xuatMang(a, n);
+		}
+		case 8:
+		{
+
+		}
 		default:
 			printf("loi xin hay chon lai.\n");
 		}
