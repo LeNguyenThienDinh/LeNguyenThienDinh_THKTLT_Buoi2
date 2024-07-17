@@ -76,7 +76,34 @@ void SapXepTangSelection(int a[], int n) {
 		a[i] = temp;
 	}
 }
+void HoanVi(int *a, int *b) {
+	int temp = *a;
+	*a = *b;
+	*b = temp;
+}
 
+int Partition(int a[], int low, int high) {
+	int p = a[high];
+	int i = (low - 1);
+
+	for (int j = low; j <= high - 1; j++) {
+		if (a[j] <= p) {
+			i++;
+			HoanVi(&a[i], &a[j]);
+		}
+	}
+	HoanVi(&a[i + 1], &a[high]);
+	return (i + 1);
+}
+
+void QuickSort(int a[], int l, int h) {
+	if (l < h) {
+		int pi = Partition(a, l, h);
+
+		QuickSort(a, l, pi - 1);
+		QuickSort(a, pi + 1, h);
+	}
+}
 void xuatMang(int a[], int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -112,6 +139,7 @@ int main() {
 		printf("5. Sap xep mang giam dan theo interchange sort\n");
 		printf("6. Tra ve vi tri cua x trong a dua tren binary search\n");
 		printf("7. Sap xep a tang dan theo selection sort\n");
+		printf("8. Sap xep theo quick sort\n");
 		printf("hay nhap lua chon: ");
 		scanf("%d", &chon);
 
@@ -173,7 +201,10 @@ int main() {
 		}
 		case 8:
 		{
-
+				  QuickSort(a, 0, n - 1);
+				  printf("Mang sau khi sap xep tang dan theo Quick Sort: ");
+				  xuatMang(a, n);
+				  break;
 		}
 		default:
 			printf("loi xin hay chon lai.\n");
