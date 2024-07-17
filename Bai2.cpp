@@ -18,6 +18,13 @@ HonSo taoHonSoNgauNhien(int min, int max) {
 	return hs;
 }
 
+void taoMangHonSoNgauNhien(HonSo b[], int n, int min, int max) 
+{
+	for (int i = 0; i < n; i++) 
+	{
+		b[i] = taoHonSoNgauNhien(min, max);
+	}
+}
 int main()
 {
 	srand(time(0));
