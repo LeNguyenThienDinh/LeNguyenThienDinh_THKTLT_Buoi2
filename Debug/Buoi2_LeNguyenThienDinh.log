@@ -1,0 +1,16 @@
+﻿Build started 17/07/2024 15:14:48.
+     1>Project "E:\LuuDuLieuSinhVien\2001215723_LeNguyenThienDinh\THKTLT_LeNguyenThienDinh_Buoi2\Buoi2_LeNguyenThienDinh\Buoi2_LeNguyenThienDinh\Buoi2_LeNguyenThienDinh.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _LIB /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Bai1.cpp
+         Bai1.cpp
+     1>e:\luudulieusinhvien\2001215723_lenguyenthiendinh\thktlt_lenguyenthiendinh_buoi2\buoi2_lenguyenthiendinh\buoi2_lenguyenthiendinh\bai1.cpp(22): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+     1>e:\luudulieusinhvien\2001215723_lenguyenthiendinh\thktlt_lenguyenthiendinh_buoi2\buoi2_lenguyenthiendinh\buoi2_lenguyenthiendinh\bai1.cpp(25): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+                 c:\program files (x86)\microsoft visual studio 12.0\vc\include\stdio.h(283) : see declaration of 'scanf'
+     1>e:\luudulieusinhvien\2001215723_lenguyenthiendinh\thktlt_lenguyenthiendinh_buoi2\buoi2_lenguyenthiendinh\buoi2_lenguyenthiendinh\bai1.cpp(32): error C2057: expected constant expression
+     1>e:\luudulieusinhvien\2001215723_lenguyenthiendinh\thktlt_lenguyenthiendinh_buoi2\buoi2_lenguyenthiendinh\buoi2_lenguyenthiendinh\bai1.cpp(32): error C2466: cannot allocate an array of constant size 0
+     1>e:\luudulieusinhvien\2001215723_lenguyenthiendinh\thktlt_lenguyenthiendinh_buoi2\buoi2_lenguyenthiendinh\buoi2_lenguyenthiendinh\bai1.cpp(32): error C2133: 'a' : unknown size
+     1>Done Building Project "E:\LuuDuLieuSinhVien\2001215723_LeNguyenThienDinh\THKTLT_LeNguyenThienDinh_Buoi2\Buoi2_LeNguyenThienDinh\Buoi2_LeNguyenThienDinh\Buoi2_LeNguyenThienDinh.vcxproj" (Build target(s)) -- FAILED.
+
+Build FAILED.
+
+Time Elapsed 00:00:00.29

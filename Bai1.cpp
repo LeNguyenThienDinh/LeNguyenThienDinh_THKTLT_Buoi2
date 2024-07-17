@@ -1,66 +1,55 @@
 #include <stdio.h>
 #include <conio.h>
 #include <time.h>
+#include <stdlib.h>
 
-void taoMangRandom(int a[], int n)
-{
+#define Min 15
+
+void TaoMangRandom(int a[], int n, int min, int max) {
 	for (int i = 0; i < n; i++) {
-		a[i] = rand() % 100;
+		a[i] = min + rand() % (max - min + 1);
 	}
 }
 void xuatMang(int a[], int n)
 {
-	for (int i = 0; i < n; i++)
-	{
-		printf("%d", a[i]);
+	for (int i = 0; i < n; i++) {
+		printf("%d ", a[i]);
 	}
 	printf("\n");
 }
-int main() {
-	int n;
-	int chon;
-	int x;
-	int index;
 
-	while (1) {
-		printf("\nChon mot trong cac tuy chon sau:\n");
-		printf("1. Tao mang ngau nhien\n");
-		printf("2. Tao mang so chan\n");
-		printf("3. Tim kiem tuyen tinh\n");
-		printf("4. Sap xep Interchange Sort tang dan\n");
-		printf("5. Tim kiem nhi phan\n");
-		printf("6. Sap xep Selection Sort\n");
-		printf("7. Sap xep Quick Sort\n");
-		printf("8. Thoat\n");
-		printf("Lua chon cua ban: ");
+int main() {
+	srand(time(0));
+	int n;
+	printf("nhap so phan tu n (>= 15): ");
+	scanf("%d", &n);
+
+	if (n < Min) {
+		printf("so luong phan tu phai it nhat la 15 %d.\n", Min);
+		return 1;
+	}
+
+	int a[n];
+	
+
+	int chon;
+	do{
+		printf("\nMenu:\n");
+		printf("1. xuat mang random\n");
+		printf("hay nhap lua chon: ");
 		scanf("%d", &chon);
 
 		switch (chon) {
 		case 1:
-			printf("Ban da chon chuc nang tao mang ngau nhien");
-			taoMangRandom(a, n);
-			printf("Mang ngau nhien la: ");
-			
+			TaoMangRandom(a, n, 0, 100);
+			printf("phan tu mang la: ");
+			xuatMang(a, n);
 			break;
-		case 2:
-			break;
-		case 3:
-			break;
-		case 4:
-			break;
-		case 5:
-			break;
-		case 6:
-			break;
-		case 7:
-			break;
-		case 8:
-			printf("Thoat chuong trinh.\n");
-			return 0;
 		default:
-			printf("Lua chon khong hop le. Vui long chon lai.\n");
+			printf("loi xin hay chon lai.\n");
 		}
-	}
+	} while (chon != 0);
+	
 
 	return 0;
 }
