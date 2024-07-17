@@ -24,6 +24,18 @@ int LinearSearch(int a[], int n, int x) {
 	}
 	return -1;
 }
+void SapXepTangInterChange(int a[], int n) {
+	for (int i = 0; i < n - 1; i++) {
+		for (int j = i + 1; j < n; j++) {
+			if (a[i] > a[j]) {
+				int temp = a[i];
+				a[i] = a[j];
+				a[j] = temp;
+			}
+		}
+	}
+}
+
 void xuatMang(int a[], int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -70,17 +82,21 @@ int main() {
 			break;
 		case 3:
 		{
-				  int x;
-				  printf("Nhap gia tri x can tim: ");
-				  scanf("%d", &x);
-				  int result = LinearSearch(a, n, x);
-				  if (result != -1) {
-					  printf("Tim thay %d tai vi tri %d trong mang.\n", x, result);
-				  }
-				  else {
-					  printf("%d khong ton tai trong mang.\n", x);
-				  }
+			int x;
+			printf("Nhap gia tri x can tim: ");
+			scanf("%d", &x);
+			int result = LinearSearch(a, n, x);
+			if (result != -1) {
+				printf("Tim thay %d tai vi tri %d trong mang.\n", x, result);
+			}
+			else {
+				printf("%d khong ton tai trong mang.\n", x);
+			}
 		}
+		case 4:
+			SapXepTangInterChange(a, n);
+			printf("Mang sau khi sap xep tang dan: ");
+			xuatMang(a, n);
 			break;
 		default:
 			printf("loi xin hay chon lai.\n");
