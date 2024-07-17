@@ -9,3 +9,31 @@ typedef struct {
 	int tuSo;
 	int mauSo;
 } HonSo;
+int main()
+{
+	srand(time(0));
+	int n;
+	printf("Nhap so phan tu n (>= 15): ");
+	scanf("%d", &n);
+
+	if (n < Min) {
+		printf("So luong phan tu phai it nhat la %d.\n", Min);
+		return 1;
+	}
+	HonSo *b = (HonSo *)malloc(n * sizeof(HonSo));
+	if (b == NULL) {
+		printf("Khong du bo nho.\n");
+		return 1;
+	}
+	int chon;
+	do{
+		printf("chon 0 de thoat chuong trinh");
+		switch (chon)
+		{
+		case 1:
+			break;
+		default:
+			printf("Lua chon khong hop le vui long chon lai");
+		}
+	} while (chon != 0);
+}
