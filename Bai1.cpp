@@ -16,6 +16,14 @@ void TaoMangChan(int a[], int n, int min, int max) {
 		a[i] = random;
 	}
 }
+int LinearSearch(int a[], int n, int x) {
+	for (int i = 0; i < n; i++) {
+		if (a[i] == x) {
+			return i;
+		}
+	}
+	return -1;
+}
 void xuatMang(int a[], int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -40,7 +48,7 @@ int main() {
 		printf("Khong du bo nho.\n");
 		return 1;
 	}
-
+	free(a);
 	int chon;
 	do{
 		printf("\nMenu:\n");
@@ -59,6 +67,20 @@ int main() {
 			TaoMangChan(a, n, 0, 100);
 			printf("Phan tu mang la: ");
 			xuatMang(a, n);
+			break;
+		case 3:
+		{
+				  int x;
+				  printf("Nhap gia tri x can tim: ");
+				  scanf("%d", &x);
+				  int result = LinearSearch(a, n, x);
+				  if (result != -1) {
+					  printf("Tim thay %d tai vi tri %d trong mang.\n", x, result);
+				  }
+				  else {
+					  printf("%d khong ton tai trong mang.\n", x);
+				  }
+		}
 			break;
 		default:
 			printf("loi xin hay chon lai.\n");
