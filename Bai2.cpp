@@ -40,6 +40,14 @@ void chuyenHonSoSangPhanSo(HonSo hs, int *tuSo, int *mauSo) {
 	*mauSo = hs.mauSo;
 }
 
+HonSo chuyenPhanSoSangHonSo(int tuSo, int mauSo) {
+	HonSo hs;
+	hs.phanNguyen = tuSo / mauSo;
+	hs.tuSo = tuSo % mauSo;
+	hs.mauSo = mauSo;
+	return hs;
+}
+
 void xuatMang(HonSo b[], int n)
 {
 	for (int i = 0; i < n; i++)
@@ -67,7 +75,8 @@ int main() {
 		printf("1. Tao mang hon so ngau nhien\n");
 		printf("2. Xuat danh sach hon so\n");
 		printf("3. So sanh 2 hon so duoc chon\n");
-		printf("4. Chuyen hon so sang mau so\n");
+		printf("4. Chuyen hon so sang phan so\n");
+		printf("5. Chuyen phan so sang hon so \n");
 		printf("0. Thoat\n");
 		printf("Hay nhap lua chon: ");
 		scanf("%d", &chon);
@@ -116,6 +125,20 @@ int main() {
 			}
 			break;
 		}
+			break;
+		}
+		case 5: 
+		{
+			int tuSo, mauSo;
+			printf("Nhap tu so va mau so cua phan so: ");
+			scanf("%d %d", &tuSo, &mauSo);
+			if (mauSo == 0) {
+				printf("Mau so phai khac 0.\n");
+			}
+			else {
+				HonSo hs = chuyenPhanSoSangHonSo(tuSo, mauSo);
+				printf("Hon so tuong ung: %d %d/%d\n", hs.phanNguyen, hs.tuSo, hs.mauSo);
+			}
 			break;
 		}
 		case 0:
