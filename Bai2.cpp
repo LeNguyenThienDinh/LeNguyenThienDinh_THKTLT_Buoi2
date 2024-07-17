@@ -25,6 +25,14 @@ void taoMangHonSoNgauNhien(HonSo b[], int n, int min, int max)
 		b[i] = taoHonSoNgauNhien(min, max);
 	}
 }
+
+void xuatMang(HonSo b[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d %d / %d\n", b[i].phanNguyen, b[i].tuSo, b[i].mauSo);
+	}
+}
 int main()
 {
 	srand(time(0));
