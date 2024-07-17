@@ -9,6 +9,15 @@ typedef struct {
 	int tuSo;
 	int mauSo;
 } HonSo;
+
+HonSo taoHonSoNgauNhien(int min, int max) {
+	HonSo hs;
+	hs.phanNguyen = min + rand() % (max - min + 1);
+	hs.tuSo = min + rand() % (max - min + 1);
+	hs.mauSo = min + rand() % (max - min) + 1;
+	return hs;
+}
+
 int main()
 {
 	srand(time(0));
