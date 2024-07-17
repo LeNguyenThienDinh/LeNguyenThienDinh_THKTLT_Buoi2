@@ -8,6 +8,14 @@ void taoMangRandom(int a[], int n)
 		a[i] = rand() % 100;
 	}
 }
+void xuatMang(int a[], int n)
+{
+	for (int i = 0; i < n; i++)
+	{
+		printf("%d", a[i]);
+	}
+	printf("\n");
+}
 int main() {
 	int n;
 	int chon;
@@ -29,6 +37,10 @@ int main() {
 
 		switch (chon) {
 		case 1:
+			printf("Ban da chon chuc nang tao mang ngau nhien");
+			taoMangRandom(a, n);
+			printf("Mang ngau nhien la: ");
+			
 			break;
 		case 2:
 			break;
