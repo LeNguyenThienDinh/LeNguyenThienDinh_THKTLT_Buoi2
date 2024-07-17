@@ -29,8 +29,11 @@ int main() {
 		return 1;
 	}
 
-	int a[n];
-	
+	int *a = (int*)malloc(n * sizeof(int));
+	if (a == NULL) {
+		printf("Khong du bo nho.\n");
+		return 1;
+	}
 
 	int chon;
 	do{
