@@ -33,13 +33,11 @@ void xuatMang(HonSo b[], int n)
 		printf("%d %d / %d\n", b[i].phanNguyen, b[i].tuSo, b[i].mauSo);
 	}
 }
-int main()
-{
+int main() {
 	srand(time(0));
 	int n;
 	printf("Nhap so phan tu n (>= 15): ");
 	scanf("%d", &n);
-
 	if (n < Min) {
 		printf("So luong phan tu phai it nhat la %d.\n", Min);
 		return 1;
@@ -50,14 +48,32 @@ int main()
 		return 1;
 	}
 	int chon;
-	do{
-		printf("chon 0 de thoat chuong trinh");
-		switch (chon)
-		{
+	do {
+		printf("\nMenu:\n");
+		printf("1. Tao mang hon so ngau nhien\n");
+		printf("2. Xuat danh sach hon so\n");
+		printf("0. Thoat\n");
+		printf("Hay nhap lua chon: ");
+		scanf("%d", &chon);
+
+		switch (chon) {
 		case 1:
+			taoMangHonSoNgauNhien(b, n, 0, 100);
+			printf("Mang hon so ngau nhien da duoc tao.\n");
+			break;
+		case 2:
+			printf("Danh sach hon so:\n");
+			xuatMang(b, n);
+			break;
+		case 0:
+			printf("Thoat chuong trinh.\n");
 			break;
 		default:
-			printf("Lua chon khong hop le vui long chon lai");
+			printf("Lua chon khong hop le. Vui long chon lai.\n");
+			break;
 		}
 	} while (chon != 0);
+
+	free(b);
+	return 0;
 }
