@@ -10,6 +10,12 @@ void TaoMangRandom(int a[], int n, int min, int max) {
 		a[i] = min + rand() % (max - min + 1);
 	}
 }
+void TaoMangChan(int a[], int n, int min, int max) {
+	for (int i = 0; i < n; i++) {
+		int random = min + (rand() % ((max - min + 1) / 2)) * 2;
+		a[i] = random;
+	}
+}
 void xuatMang(int a[], int n)
 {
 	for (int i = 0; i < n; i++) {
@@ -39,6 +45,7 @@ int main() {
 	do{
 		printf("\nMenu:\n");
 		printf("1. xuat mang random\n");
+		printf("2. xuat mang random toan chan\n");
 		printf("hay nhap lua chon: ");
 		scanf("%d", &chon);
 
@@ -46,6 +53,11 @@ int main() {
 		case 1:
 			TaoMangRandom(a, n, 0, 100);
 			printf("phan tu mang la: ");
+			xuatMang(a, n);
+			break;
+		case 2:
+			TaoMangChan(a, n, 0, 100);
+			printf("Phan tu mang la: ");
 			xuatMang(a, n);
 			break;
 		default:
