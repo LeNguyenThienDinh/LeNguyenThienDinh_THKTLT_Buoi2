@@ -131,6 +131,7 @@ int main() {
 	free(a);
 	int chon;
 	do{
+
 		printf("\nMenu:\n");
 		printf("1. xuat mang random\n");
 		printf("2. xuat mang random toan chan\n");
